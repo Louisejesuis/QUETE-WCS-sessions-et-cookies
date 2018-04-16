@@ -1,7 +1,10 @@
 <?php
 session_start();
-?>
-<?php require 'inc/head.php'; ?>
+if (!isset($_SESSION['loginname'])) {
+    header('Location : login.php');
+    exit();
+}
+require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
     <div class="row">
         <h2>Basket :</h2>

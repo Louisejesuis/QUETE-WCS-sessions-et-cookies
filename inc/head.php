@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!empty($_GET['logout'])) {
     unset($_SESSION['loginname']);
     header('Location: login.php');
@@ -62,6 +63,10 @@ if (!empty($_GET['logout'])) {
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong><?= 'Hello' . ' ' . $_SESSION['loginname'] . ' !' ?></strong>
+      <?php if (isset($_SESSION['loginname'])) : ?>
+            <strong><?= 'Hello' . ' ' . $_SESSION['loginname'] . ' !' ?></strong>
+      <?php else: ?>
+         <strong><?= 'Hello wilder !' ?></strong>
+      <?php endif; ?>
   </div>
 </header>
