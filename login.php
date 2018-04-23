@@ -1,16 +1,11 @@
 <?php require 'inc/head.php';
-session_start();
-if (!empty($_POST['loginname'])) {
-    $_SESSION['loginname'] = $_POST['loginname'];
-    header('Location: index.php');
-    exit();
-}
-elseif (isset($_SESSION['loginname'])) {
+if (!empty($_GET['loginname'])) {
+    $_SESSION['loginname'] = $_GET['loginname'];
     header('Location: index.php');
     exit();
 }
 ?>
-<div class="container" style="margin-top:40px">
+<div class="container">
 <div class="row">
   <div class="col-sm-6 col-md-4 col-md-offset-4">
     <div class="panel panel-default">
@@ -18,7 +13,7 @@ elseif (isset($_SESSION['loginname'])) {
         <strong> Sign in to continue</strong>
       </div>
       <div class="panel-body">
-        <form role="form" action="#" method="POST">
+        <form role="form" action="#" method="GET">
           <fieldset>
             <div class="row">
               <div class="center-block">

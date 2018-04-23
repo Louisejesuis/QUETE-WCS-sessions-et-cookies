@@ -1,6 +1,4 @@
 <?php require 'inc/head.php';
-session_start();
-
 if (!empty($_GET['add_to_cart'])) {
     $basket = $_GET['add_to_cart'];
     setcookie("cart[$basket]", 0);
@@ -15,8 +13,8 @@ if (!empty($_GET['add_to_cart'])) {
     }elseif ($_GET['add_to_cart'] == 58) {
 
             setcookie("cart[$basket]", 58);
-}
-    header('Location: index.php');
+    }
+    header('Location:index.php');
     exit();
 }
 ?>
