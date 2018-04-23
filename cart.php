@@ -1,9 +1,10 @@
 <?php
-if ($_SESSION['loginname'] == null ) {
+
+if ($_COOKIE['cart'] == null ) {
     header('Location:login.php');
     exit();
 }
-var_dump($_SESSION['loginname']);
+
 require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
     <div class="row">
