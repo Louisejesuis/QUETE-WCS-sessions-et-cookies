@@ -1,4 +1,6 @@
-<?php require 'inc/head.php';
+<?php
+session_start();
+require 'inc/head.php';
 if (!empty($_GET['loginname'])) {
     $_SESSION['loginname'] = $_GET['loginname'];
     header('Location: index.php');

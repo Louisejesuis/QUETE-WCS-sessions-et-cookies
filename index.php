@@ -1,4 +1,6 @@
-<?php require 'inc/head.php';
+<?php
+session_start();
+require 'inc/head.php';
 if (!empty($_GET['add_to_cart'])) {
     $basket = $_GET['add_to_cart'];
     setcookie("cart[$basket]", 0);

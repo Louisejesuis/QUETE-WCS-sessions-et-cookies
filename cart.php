@@ -1,6 +1,6 @@
 <?php
-
-if ($_COOKIE['cart'] == null ) {
+session_start();
+if (!isset($_SESSION['loginname'])) {
     header('Location:login.php');
     exit();
 }
